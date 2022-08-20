@@ -1,0 +1,11 @@
+FROM nginx:1.23
+
+# ドキュメントルート
+ADD ./app /usr/share/nginx/html
+ADD ./nginx.conf /etc/nginx/nginx.conf:ro
+
+# 待ち受けポート番号
+EXPOSE 80
+
+# フォアグラウンドで実行しないとコンテナが停止してしまう
+CMD nginx -g "daemon off;"

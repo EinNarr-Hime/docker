@@ -1,0 +1,10 @@
+# https://docs.docker.jp/compose/compose-file/compose-versioning.html#compose-file-version-3
+version: "3.8"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    container_name: nginx
+    ports:
+      - "8080:80"
