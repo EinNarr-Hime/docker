@@ -1,0 +1,8 @@
+FROM golang:1.19-alpine3.16
+
+# go getは裏でgitを利用しているがalpineにはgitが入っていないのでインストールする必要あり
+RUN apk update && apk add git
+
+RUN mkdir /go/src/app
+
+WORKDIR /go/src/app
